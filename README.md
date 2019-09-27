@@ -20,6 +20,8 @@ Copy sound files to the robot:
 
 Connect the robot and the ps4 controller to your laptop.
 
+To connect the ps4 controller via bluetooth follow [this link](http://ros-developer.com/2017/12/14/ps4-controller-bluetooth-ubuntu/).
+
 ## Run 
 `cd scripts/`
 `python ps4.py -ip <robot_ip>`
