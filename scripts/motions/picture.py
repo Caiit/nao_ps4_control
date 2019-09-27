@@ -125,7 +125,7 @@ def take_picture(motion_proxy, audio_player_proxy, camera_proxy):
     times.append([0.36, 0.84, 1.64, 2.16, 2.56, 3.64])
     keys.append([[0.994838, [3, -0.133333, 0], [3, 0.16, 0]], [0.547595, [3, -0.16, 0], [3, 0.266667, 0]], [0.751617, [3, -0.266667, 0], [3, 0.173333, 0]], [0.736278, [3, -0.173333, 0], [3, 0.133333, 0]], [0.736278, [3, -0.133333, 0], [3, 0.36, 0]], [0.177901, [3, -0.36, 0], [3, 0, 0]]])
 
-    audio_thread = threading.Thread(target=audio_player_proxy.playFile, args=(PATH + "/../sounds/camera1.ogg", ))
+    audio_thread = threading.Thread(target=audio_player_proxy.playFile, args=("home/nao/sounds/camera1.ogg", ))
     motion_thread = threading.Thread(target=motion_proxy.angleInterpolationBezier, args=(names, times, keys, ))
     camera_thread = threading.Thread(target=save_image, args=(camera_proxy, ))
     motion_thread.start()

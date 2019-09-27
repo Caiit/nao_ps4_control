@@ -114,7 +114,7 @@ def elephant(motion_proxy, audio_player_proxy):
     times.append([0.44, 0.84, 1.92, 3.32, 4.4, 5.72, 6.24, 6.76])
     keys.append([[0.493928, [3, -0.16, 0], [3, 0.133333, 0]], [-1.27409, [3, -0.133333, 0], [3, 0.36, 0]], [-1.27223, [3, -0.36, 0], [3, 0.466667, 0]], [-1.27409, [3, -0.466667, 0], [3, 0.36, 0]], [-1.27223, [3, -0.36, 0], [3, 0.44, 0]], [-1.27409, [3, -0.44, 0], [3, 0.173333, 0]], [0.883542, [3, -0.173333, 0], [3, 0.173333, 0]], [0.0858622, [3, -0.173333, 0], [3, 0, 0]]])
 
-    audio_thread = threading.Thread(target=audio_player_proxy.playFile, args=(PATH + "/../sounds/elephant.ogg", ))
+    audio_thread = threading.Thread(target=audio_player_proxy.playFile, args=("/home/nao/sounds/elephant.ogg", ))
     motion_thread = threading.Thread(target=motion_proxy.angleInterpolationBezier, args=(names, times, keys, ))
     audio_thread.start()
     motion_thread.start()

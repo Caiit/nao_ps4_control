@@ -15,11 +15,17 @@ class NAO(object):
         self.text_to_speech_proxy = ALProxy("ALTextToSpeech", ip, port)
         self.audio_player_proxy = ALProxy("ALAudioPlayer", ip, port)
         self.camera_proxy = ALProxy("ALVideoDevice", ip, port)
+        self.auto_life_proxy = ALProxy("ALAutonomousLife", ip, port)
 
         # Last walking commands
         self.x = 0
         self.y = 0
         self.theta = 0
+        
+        # Turn off autonomous life and wake up
+        self.auto_life_proxy.setAutonomousAbilityEnabled("All", False)
+        self.motion_proxy.wakeUp()
+        self.text_to_speech_proxy.say("Hi, I'm Nao")
 
     def walk(self, x, y, theta):
         if (self.x != 0 or self.y != 0 or self.theta != 0) and (x == 0 and y == 0 and theta == 0):
@@ -51,3 +57,7 @@ class NAO(object):
     def take_picture(self):
         picture.take_picture(self.motion_proxy, self.audio_player_proxy, self.camera_proxy)
         self.posture_proxy.goToPosture("StandInit", 0.5)
+    
+    def rest(self):
+        self.text_to_speech_proxy.say("Bye bye")
+        self.motion_proxy.rest()

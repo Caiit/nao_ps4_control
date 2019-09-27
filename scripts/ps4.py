@@ -79,6 +79,7 @@ class PS4Controller(object):
                 pass
             elif button == 10:  # PS4
                 print("\033[91m Shutting down \033[0m")
+                self.robot.rest()
                 pygame.joystick.quit()
                 exit()
             elif button == 11:  # Left joystick
