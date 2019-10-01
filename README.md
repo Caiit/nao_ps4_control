@@ -5,13 +5,13 @@ Control the Nao robot with a ps4 controller.
 - python 2
 - [pygame](https://www.pygame.org/news)
 - [Pillow](https://pypi.org/project/Pillow/)
-- [NaoQi](http://doc.aldebaran.com/2-1/dev/python/install_guide.html)
+- [NaoQi](http://doc.aldebaran.com/2-4/dev/python/install_guide.html)
 
 `pygame` and `Pillow` can be installed using pip or the requirements file: 
 
 `pip install -r requirements.txt`
 
-`NaoQi` cannot be installed using pip and should be installed following [this link](http://doc.aldebaran.com/2-1/dev/python/install_guide.html).
+`NaoQi` cannot be installed using pip and should be installed following [this link](http://doc.aldebaran.com/2-4/dev/python/install_guide.html).
 
 ## Setup
 Copy sound files to the robot:
